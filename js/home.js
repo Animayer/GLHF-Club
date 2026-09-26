@@ -1,4 +1,4 @@
-import { formatDate, formatNumber } from "./format.js";
+import { esc, formatDate, formatNumber } from "./format.js";
 import { published, renderShell, sample, setHeldDates, tokenButton } from "./ui.js";
 import { heldMap, loadSnapshot, resolveWallet } from "./wallet.js";
 
@@ -73,7 +73,7 @@ content.innerHTML = `<section class="hero">
       <h2>Giga Loadout</h2>
       <a class="text-link" href="loadout/">Open loadout</a>
     </div>
-    <p class="meta">${wallet.address}</p>
+    <p class="mono">${esc(wallet.address)}</p>
     <div class="slot-grid">${slots.map((token) => tokenButton(token)).join("")}</div>
   </section>
   <section class="section">
