@@ -651,39 +651,61 @@ input[type="search"], select {
   letter-spacing: 0.02em;
 }
 
-.board-head,
-.board li {
+.board-table {
   display: grid;
-  grid-template-columns: 4.75rem minmax(0, 1fr) 4.5rem 5.25rem 4rem 5.5rem max-content;
+  grid-template-columns: 4.75rem minmax(0, 1fr) 4.5rem 5.25rem 4rem 5.5rem auto;
   column-gap: 12px;
   align-items: center;
 }
 
-.board-head {
-  padding: 0 0 8px;
-  color: var(--muted);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
+.board-head,
+.board,
+.board li,
+.board .split { display: contents; }
 
-.board { list-style: none; padding: 0; margin: 0; }
-
-.board li {
-  border-top: 1px solid var(--line);
+.board-head span,
+.board li > .rank,
+.board li > .wallet,
+.board li > .col-total,
+.board li > .marks,
+.board li .split .num {
   padding: 12px 0;
   white-space: nowrap;
 }
 
-.board li.is-demo {
-  background: var(--soft);
-  border-radius: 10px;
+.board li > .rank,
+.board li > .wallet,
+.board li > .col-total,
+.board li > .marks,
+.board li .split .num {
+  border-top: 1px solid var(--line);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 
-.board .split { display: contents; }
+.board-head span {
+  padding-top: 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.board-head .num { text-align: right; }
+
+.board li.is-demo > .rank,
+.board li.is-demo > .wallet,
+.board li.is-demo > .col-total,
+.board li.is-demo > .marks,
+.board li.is-demo .split .num {
+  background: var(--soft);
+}
+
+.board { list-style: none; padding: 0; margin: 0; }
 
 .board .num {
+  justify-content: flex-end;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -855,19 +877,34 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 @media (max-width: 720px) {
+  .board-table { display: block; }
+  .board { display: block; }
   .board-head { display: none; }
   .board li {
+    display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas:
       "rank wallet total"
       "split split split"
       "marks marks marks";
     row-gap: 6px;
+    border-top: 1px solid var(--line);
+    padding: 12px 0;
+    white-space: normal;
+  }
+  .board li > .rank,
+  .board li > .wallet,
+  .board li > .col-total,
+  .board li > .marks,
+  .board li .split .num {
+    border-top: 0;
+    padding: 0;
+    align-self: center;
     white-space: normal;
   }
   .board li .rank { grid-area: rank; }
   .board li .wallet { grid-area: wallet; }
-  .board li .col-total { grid-area: total; }
+  .board li .col-total { grid-area: total; justify-content: flex-end; }
   .board li .split {
     display: flex;
     grid-area: split;
@@ -876,7 +913,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     color: var(--muted);
     font-size: 13px;
   }
-  .board li .split .num { text-align: left; }
+  .board li .split .num { justify-content: flex-start; text-align: left; }
   .board .col-label { display: inline; }
   .board li .marks { grid-area: marks; justify-content: flex-start; }
   .notice { padding: 8px 16px; }

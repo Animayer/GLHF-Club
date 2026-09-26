@@ -23,13 +23,15 @@ const rows = snapshot.leaderboard.map((row) => `<li class="${row.demo ? "is-demo
 document.getElementById("content").innerHTML = `<h1>Leaderboard</h1>
   <p class="banner">Preview: ranking by holdings only, not final score</p>
   <p class="meta">Top 25 wallets by total pieces in the sample snapshot. Piece counts are sample.</p>
-  <div class="board-head" aria-hidden="true">
-    <span>Rank</span>
-    <span>Wallet</span>
-    <span class="num">Pieces</span>
-    <span class="num">GLHFers</span>
-    <span class="num">ROMs</span>
-    <span class="num">Giglings</span>
-    <span></span>
-  </div>
-  <ol class="board">${rows}</ol>`;
+  <div class="board-table">
+    <div class="board-head" aria-hidden="true">
+      <span>Rank</span>
+      <span>Wallet</span>
+      <span class="num">Pieces</span>
+      <span class="num">GLHFers</span>
+      <span class="num">ROMs</span>
+      <span class="num">Giglings</span>
+      <span></span>
+    </div>
+    <ol class="board">${rows}</ol>
+  </div>`;
