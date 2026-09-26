@@ -407,10 +407,7 @@ export function romTraitOptions() {
 
 export function spriteFor(token) {
   if (token.collection === "roms") return FACTION_ART[traitValue(token, "Faction")];
-  if (token.collection === "glhfers") {
-    if (token.id % 3 === 0) return EXPRESSIONS[(token.id - 1) % EXPRESSIONS.length];
-    return HEADS[(token.id - 1) % HEADS.length];
-  }
+  if (token.collection === "glhfers") return HEADS[(token.id - 1) % HEADS.length];
   return EXPRESSIONS[(token.id - 1) % EXPRESSIONS.length];
 }
 

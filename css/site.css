@@ -212,9 +212,10 @@ main {
 .hero-banner {
   display: block;
   width: 100%;
-  height: clamp(120px, 22vw, 188px);
-  object-fit: cover;
-  object-position: center 42%;
+  height: auto;
+  aspect-ratio: 2500 / 1042;
+  object-fit: contain;
+  object-position: center;
   border-radius: 16px;
   box-shadow: var(--shadow);
   margin-bottom: 22px;
@@ -650,25 +651,46 @@ input[type="search"], select {
   letter-spacing: 0.02em;
 }
 
+.board-head,
+.board li {
+  display: grid;
+  grid-template-columns: 4.75rem minmax(0, 1fr) 4.5rem 5.25rem 4rem 5.5rem max-content;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.board-head {
+  padding: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .board { list-style: none; padding: 0; margin: 0; }
 
 .board li {
-  display: grid;
-  grid-template-columns: 88px minmax(0, 1.4fr) minmax(0, 1fr) auto;
-  gap: 8px 16px;
-  align-items: center;
   border-top: 1px solid var(--line);
   padding: 12px 0;
+  white-space: nowrap;
 }
 
 .board li.is-demo {
-  background: var(--card);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  margin: 6px 0;
-  padding: 12px;
+  background: var(--soft);
+  border-radius: 10px;
 }
+
+.board .split { display: contents; }
+
+.board .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.board .col-label { display: none; }
+
+.board .wallet { min-width: 0; }
 
 .rank {
   display: inline-flex;
@@ -829,12 +851,34 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .loadout-head, .card-grid, .band-grid, .overlap-grid { grid-template-columns: 1fr; }
   .slot-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .filters { grid-template-columns: 1fr 1fr; }
-  .board li { grid-template-columns: 72px minmax(0, 1fr); }
-  .board .marks { justify-content: flex-start; }
   .score-bands { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 720px) {
+  .board-head { display: none; }
+  .board li {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "rank wallet total"
+      "split split split"
+      "marks marks marks";
+    row-gap: 6px;
+    white-space: normal;
+  }
+  .board li .rank { grid-area: rank; }
+  .board li .wallet { grid-area: wallet; }
+  .board li .col-total { grid-area: total; }
+  .board li .split {
+    display: flex;
+    grid-area: split;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .board li .split .num { text-align: left; }
+  .board .col-label { display: inline; }
+  .board li .marks { grid-area: marks; justify-content: flex-start; }
   .notice { padding: 8px 16px; }
   .topbar { padding: 12px 16px; }
   .fullstack-stat { margin-left: 0; }
