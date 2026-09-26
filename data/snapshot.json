@@ -1,0 +1,527 @@
+{
+  "snapshotDate": "2026-07-17",
+  "seed": 20260717,
+  "fullStackWallets": 225,
+  "wallet": {
+    "address": "0xDEMO00000000000000000000000000000000GLHF",
+    "rank": 7,
+    "glhfers": [
+      {
+        "collection": "glhfers",
+        "id": 2423,
+        "firstHeld": "2024-03-06"
+      },
+      {
+        "collection": "glhfers",
+        "id": 1788,
+        "firstHeld": "2024-04-14"
+      },
+      {
+        "collection": "glhfers",
+        "id": 2486,
+        "firstHeld": "2024-04-29"
+      },
+      {
+        "collection": "glhfers",
+        "id": 2578,
+        "firstHeld": "2024-06-21"
+      },
+      {
+        "collection": "glhfers",
+        "id": 640,
+        "firstHeld": "2024-08-11"
+      },
+      {
+        "collection": "glhfers",
+        "id": 200,
+        "firstHeld": "2025-05-31"
+      },
+      {
+        "collection": "glhfers",
+        "id": 1356,
+        "firstHeld": "2025-08-20"
+      },
+      {
+        "collection": "glhfers",
+        "id": 206,
+        "firstHeld": "2025-08-26"
+      },
+      {
+        "collection": "glhfers",
+        "id": 2949,
+        "firstHeld": "2025-11-19"
+      }
+    ],
+    "roms": [
+      {
+        "collection": "roms",
+        "id": 5006,
+        "firstHeld": "2024-02-22"
+      },
+      {
+        "collection": "roms",
+        "id": 3594,
+        "firstHeld": "2024-05-11"
+      },
+      {
+        "collection": "roms",
+        "id": 6274,
+        "firstHeld": "2024-07-06"
+      },
+      {
+        "collection": "roms",
+        "id": 9176,
+        "firstHeld": "2024-09-05"
+      },
+      {
+        "collection": "roms",
+        "id": 8998,
+        "firstHeld": "2024-09-13"
+      },
+      {
+        "collection": "roms",
+        "id": 4636,
+        "firstHeld": "2025-03-06"
+      },
+      {
+        "collection": "roms",
+        "id": 901,
+        "firstHeld": "2025-11-20"
+      }
+    ],
+    "giglings": [
+      {
+        "collection": "giglings",
+        "id": 4463,
+        "firstHeld": "2024-02-02"
+      },
+      {
+        "collection": "giglings",
+        "id": 497,
+        "firstHeld": "2024-05-21"
+      },
+      {
+        "collection": "giglings",
+        "id": 132,
+        "firstHeld": "2024-06-27"
+      },
+      {
+        "collection": "giglings",
+        "id": 3266,
+        "firstHeld": "2025-06-27"
+      }
+    ]
+  },
+  "collections": {
+    "glhfers": {
+      "name": "GLHFers",
+      "chain": "Ethereum",
+      "supply": 3248,
+      "supplySample": true,
+      "holders": 1249,
+      "avg": 2.6,
+      "top10Share": 0.0914,
+      "distribution": [
+        {
+          "label": "1",
+          "holders": 666
+        },
+        {
+          "label": "2–5",
+          "holders": 444
+        },
+        {
+          "label": "6–10",
+          "holders": 131
+        },
+        {
+          "label": "11–25",
+          "holders": 5
+        },
+        {
+          "label": "26+",
+          "holders": 3
+        }
+      ]
+    },
+    "roms": {
+      "name": "ROMs",
+      "chain": "Abstract",
+      "supply": 10000,
+      "supplySample": false,
+      "tiers": [
+        {
+          "name": "Silver",
+          "count": 5800,
+          "sample": false
+        },
+        {
+          "name": "Gold",
+          "count": 3200,
+          "sample": false
+        },
+        {
+          "name": "Void",
+          "count": 850,
+          "sample": false
+        },
+        {
+          "name": "Giga",
+          "count": 150,
+          "sample": false
+        }
+      ],
+      "holders": 4545,
+      "avg": 2.2,
+      "top10Share": 0.09,
+      "distribution": [
+        {
+          "label": "1",
+          "holders": 2442
+        },
+        {
+          "label": "2–5",
+          "holders": 2087
+        },
+        {
+          "label": "6–10",
+          "holders": 7
+        },
+        {
+          "label": "11–25",
+          "holders": 3
+        },
+        {
+          "label": "26+",
+          "holders": 6
+        }
+      ]
+    },
+    "giglings": {
+      "name": "Giglings",
+      "chain": "Abstract",
+      "supply": 4800,
+      "supplySample": true,
+      "holders": 2000,
+      "avg": 2.4,
+      "top10Share": 0.0727,
+      "distribution": [
+        {
+          "label": "1",
+          "holders": 1077
+        },
+        {
+          "label": "2–5",
+          "holders": 801
+        },
+        {
+          "label": "6–10",
+          "holders": 118
+        },
+        {
+          "label": "11–25",
+          "holders": 0
+        },
+        {
+          "label": "26+",
+          "holders": 4
+        }
+      ]
+    }
+  },
+  "overlaps": {
+    "glhfersRoms": 612,
+    "glhfersGiglings": 448,
+    "romsGiglings": 736,
+    "allThree": 225
+  },
+  "leaderboard": [
+    {
+      "rank": 1,
+      "address": "0xFAKE01NOTLIVE000000000000000000000000000",
+      "glhfers": 64,
+      "roms": 360,
+      "giglings": 120,
+      "total": 544,
+      "fullStack": true,
+      "tier": "Archive",
+      "demo": false
+    },
+    {
+      "rank": 2,
+      "address": "0xFAKE02NOTLIVE000000000000000000000000000",
+      "glhfers": 32,
+      "roms": 220,
+      "giglings": 90,
+      "total": 342,
+      "fullStack": true,
+      "tier": "Vault",
+      "demo": false
+    },
+    {
+      "rank": 3,
+      "address": "0xFAKE03NOTLIVE000000000000000000000000000",
+      "glhfers": 96,
+      "roms": 110,
+      "giglings": 0,
+      "total": 206,
+      "fullStack": false,
+      "tier": "Vault",
+      "demo": false
+    },
+    {
+      "rank": 4,
+      "address": "0xFAKE04NOTLIVE000000000000000000000000000",
+      "glhfers": 18,
+      "roms": 80,
+      "giglings": 80,
+      "total": 178,
+      "fullStack": true,
+      "tier": "Vault",
+      "demo": false
+    },
+    {
+      "rank": 5,
+      "address": "0xFAKE05NOTLIVE000000000000000000000000000",
+      "glhfers": 12,
+      "roms": 28,
+      "giglings": 40,
+      "total": 80,
+      "fullStack": true,
+      "tier": "Vault",
+      "demo": false
+    },
+    {
+      "rank": 6,
+      "address": "0xFAKE06NOTLIVE000000000000000000000000000",
+      "glhfers": 24,
+      "roms": 50,
+      "giglings": 0,
+      "total": 74,
+      "fullStack": false,
+      "tier": "Stack",
+      "demo": false
+    },
+    {
+      "rank": 7,
+      "address": "0xDEMO00000000000000000000000000000000GLHF",
+      "glhfers": 9,
+      "roms": 7,
+      "giglings": 4,
+      "total": 20,
+      "fullStack": true,
+      "tier": "Stack",
+      "demo": true
+    },
+    {
+      "rank": 8,
+      "address": "0xFAKE07NOTLIVE000000000000000000000000000",
+      "glhfers": 19,
+      "roms": 0,
+      "giglings": 0,
+      "total": 19,
+      "fullStack": false,
+      "tier": "Stack",
+      "demo": false
+    },
+    {
+      "rank": 9,
+      "address": "0xFAKE08NOTLIVE000000000000000000000000000",
+      "glhfers": 0,
+      "roms": 18,
+      "giglings": 0,
+      "total": 18,
+      "fullStack": false,
+      "tier": "Stack",
+      "demo": false
+    },
+    {
+      "rank": 10,
+      "address": "0xFAKE09NOTLIVE000000000000000000000000000",
+      "glhfers": 9,
+      "roms": 8,
+      "giglings": 0,
+      "total": 17,
+      "fullStack": false,
+      "tier": "Stack",
+      "demo": false
+    },
+    {
+      "rank": 11,
+      "address": "0xFAKE10NOTLIVE000000000000000000000000000",
+      "glhfers": 5,
+      "roms": 5,
+      "giglings": 6,
+      "total": 16,
+      "fullStack": true,
+      "tier": "Stack",
+      "demo": false
+    },
+    {
+      "rank": 12,
+      "address": "0xFAKE11NOTLIVE000000000000000000000000000",
+      "glhfers": 1,
+      "roms": 13,
+      "giglings": 1,
+      "total": 15,
+      "fullStack": true,
+      "tier": "Stack",
+      "demo": false
+    },
+    {
+      "rank": 13,
+      "address": "0xFAKE12NOTLIVE000000000000000000000000000",
+      "glhfers": 14,
+      "roms": 0,
+      "giglings": 0,
+      "total": 14,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 14,
+      "address": "0xFAKE13NOTLIVE000000000000000000000000000",
+      "glhfers": 0,
+      "roms": 13,
+      "giglings": 0,
+      "total": 13,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 15,
+      "address": "0xFAKE14NOTLIVE000000000000000000000000000",
+      "glhfers": 6,
+      "roms": 6,
+      "giglings": 0,
+      "total": 12,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 16,
+      "address": "0xFAKE15NOTLIVE000000000000000000000000000",
+      "glhfers": 3,
+      "roms": 4,
+      "giglings": 4,
+      "total": 11,
+      "fullStack": true,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 17,
+      "address": "0xFAKE16NOTLIVE000000000000000000000000000",
+      "glhfers": 1,
+      "roms": 8,
+      "giglings": 1,
+      "total": 10,
+      "fullStack": true,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 18,
+      "address": "0xFAKE17NOTLIVE000000000000000000000000000",
+      "glhfers": 9,
+      "roms": 0,
+      "giglings": 0,
+      "total": 9,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 19,
+      "address": "0xFAKE18NOTLIVE000000000000000000000000000",
+      "glhfers": 0,
+      "roms": 8,
+      "giglings": 0,
+      "total": 8,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 20,
+      "address": "0xFAKE19NOTLIVE000000000000000000000000000",
+      "glhfers": 0,
+      "roms": 8,
+      "giglings": 0,
+      "total": 8,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 21,
+      "address": "0xFAKE20NOTLIVE000000000000000000000000000",
+      "glhfers": 1,
+      "roms": 6,
+      "giglings": 1,
+      "total": 8,
+      "fullStack": true,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 22,
+      "address": "0xFAKE21NOTLIVE000000000000000000000000000",
+      "glhfers": 4,
+      "roms": 4,
+      "giglings": 0,
+      "total": 8,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 23,
+      "address": "0xFAKE22NOTLIVE000000000000000000000000000",
+      "glhfers": 4,
+      "roms": 4,
+      "giglings": 0,
+      "total": 8,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 24,
+      "address": "0xFAKE23NOTLIVE000000000000000000000000000",
+      "glhfers": 2,
+      "roms": 3,
+      "giglings": 3,
+      "total": 8,
+      "fullStack": true,
+      "tier": "Keeper",
+      "demo": false
+    },
+    {
+      "rank": 25,
+      "address": "0xFAKE24NOTLIVE000000000000000000000000000",
+      "glhfers": 8,
+      "roms": 0,
+      "giglings": 0,
+      "total": 8,
+      "fullStack": false,
+      "tier": "Keeper",
+      "demo": false
+    }
+  ],
+  "communities": [
+    {
+      "name": "Disciples of Gigus",
+      "art": "assets/factions/gigus1x1.png",
+      "note": "Placeholder community. Member list is not in this snapshot."
+    },
+    {
+      "name": "Auctioneer's Henchmen",
+      "art": "assets/gifs/Auctioneer.gif",
+      "note": "Placeholder community. Member list is not in this snapshot."
+    }
+  ]
+}
