@@ -397,6 +397,8 @@ main {
   line-height: 1.4;
 }
 
+.loadout, .loadout-head, .panel, .identity, .stat-list { min-width: 0; }
+
 .loadout-head {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.85fr);
@@ -439,14 +441,16 @@ main {
 
 .stat-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0 16px;
 }
 
 .stat-list li, .score-list li, .stat-line {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 12px;
+  gap: 2px 8px;
+  min-width: 0;
   padding: 8px 0;
   border-top: 1px solid var(--line);
 }
