@@ -1,5 +1,5 @@
 import { esc, formatNumber } from "./format.js";
-import { GLHFER_SUPPLY, baseTraitCounts, clanMemberCount, rarityMeta, valueRarity } from "./model.js";
+import { GLHFER_SUPPLY, baseTraitCounts, clanMemberCount, emblemIconFor, rarityMeta, valueRarity } from "./model.js";
 import { asset } from "./paths.js";
 import { renderShell, sample } from "./ui.js";
 import { loadSnapshot } from "./wallet.js";
@@ -38,7 +38,7 @@ content.innerHTML = `<h1>Clans &amp; Guilds</h1>
         const color = rarityMeta(clan.rarity).color;
         return `<article class="clan">
           <p class="badge" style="background:${color};color:${rarityMeta(clan.rarity).ink}">${esc(rarityMeta(clan.rarity).label)}</p>
-          <h3>${esc(clan.name)}</h3>
+          <h3 class="clan-name"><img class="emblem-icon" alt="" src="${esc(asset(emblemIconFor(clan.name)))}"> ${esc(clan.name)}</h3>
           <p>Tokens ${sample(formatNumber(clan.count))}</p>
           <p>Members ${sample(formatNumber(clan.members))}</p>
         </article>`;

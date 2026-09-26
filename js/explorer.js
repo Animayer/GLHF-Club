@@ -1,5 +1,6 @@
 import { esc, formatNumber } from "./format.js";
-import { PAGE_SIZE, allRoms, romTraitOptions } from "./model.js";
+import { PAGE_SIZE, allRoms, factionIcon, romTraitOptions } from "./model.js";
+import { asset } from "./paths.js";
 import { renderShell, setHeldDates, tokenButton } from "./ui.js";
 import { heldMap, loadSnapshot } from "./wallet.js";
 
@@ -85,6 +86,10 @@ content.innerHTML = `<h1>Explorer</h1>
       <option value="rarest"${state.sort === "rarest" ? " selected" : ""}>Rarest</option>
     </select></label>
   </form>
+  <div class="faction-chips" role="group" aria-label="Factions">
+    <button type="button" data-faction="">Any</button>
+    ${optionsMap.Faction.map((name) => `<button type="button" data-faction="${esc(name)}"><img class="pixel-icon" alt="" src="${esc(asset(factionIcon(name)))}">${esc(name)}</button>`).join("")}
+  </div>
   <div id="explorer-results"></div>`;
 
 const form = document.getElementById("filters");
@@ -101,6 +106,11 @@ function syncControls() {
     button.setAttribute("aria-selected", tab === state.tab ? "true" : "false");
   });
   form.hidden = state.tab !== "roms";
+  const chips = document.querySelector(".faction-chips");
+  if (chips) chips.hidden = state.tab !== "roms";
+  document.querySelectorAll("[data-faction]").forEach((button) => {
+    button.setAttribute("aria-pressed", button.dataset.faction === state.faction ? "true" : "false");
+  });
 }
 
 function renderResults() {
@@ -151,6 +161,11 @@ content.addEventListener("click", (event) => {
   const tab = event.target.closest("[data-tab]");
   if (tab) {
     apply({ tab: tab.dataset.tab }, "push");
+    return;
+  }
+  const faction = event.target.closest("[data-faction]");
+  if (faction) {
+    apply({ faction: faction.dataset.faction, page: 1 }, "push");
     return;
   }
   const pager = event.target.closest("[data-page]");

@@ -1,4 +1,6 @@
 import { esc, formatDate, formatNumber } from "./format.js";
+import { BRAND } from "./model.js";
+import { asset } from "./paths.js";
 import { published, renderShell, sample, setHeldDates, tokenButton } from "./ui.js";
 import { heldMap, loadSnapshot, resolveWallet } from "./wallet.js";
 
@@ -44,6 +46,7 @@ const tierLine = collections.roms.tiers.map((tier) => `${tier.name} ${formatNumb
 const slots = ["glhfers", "roms", "giglings"].flatMap((key) => wallet.slots[key]);
 
 content.innerHTML = `<section class="hero">
+    <img class="hero-banner" alt="" src="${esc(asset(BRAND.banner))}">
     <h1>Good luck, have fun, welcome home.</h1>
     <p class="lede">Collector pages for GLHFers, ROMs, and Giglings. This view is the ${formatDate(snapshot.snapshotDate)} snapshot of one demo wallet.</p>
   </section>

@@ -1,5 +1,6 @@
 import { formatNumber } from "./format.js";
-import { renderShell, sample, toast } from "./ui.js";
+import { medalForScore } from "./model.js";
+import { medalImg, renderShell, sample, toast } from "./ui.js";
 import { loadSnapshot, resolveWallet } from "./wallet.js";
 
 const BANDS = [
@@ -23,7 +24,7 @@ document.getElementById("content").innerHTML = `<h1>Partner drops</h1>
       ${BANDS.map((band) => {
         const yours = score >= band.min && score <= band.max;
         return `<article class="band${yours ? " is-yours" : ""}">
-          <h3>${band.min}–${band.max}</h3>
+          <h3>${medalImg(medalForScore(band.min), "medal-lg")} ${band.min}–${band.max}</h3>
           <p>${band.name}${yours ? " · this wallet" : ""}</p>
           <p class="meta">${band.requirement} <span class="tag">sample</span></p>
           <div class="empty-slot">Empty drop slot</div>

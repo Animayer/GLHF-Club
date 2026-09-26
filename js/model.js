@@ -58,14 +58,36 @@ const HEADS = [
   "assets/heads/summoner_front.png",
 ];
 
-const GIG_ART = [
-  "assets/sprites/Giganoob_PFP.png",
-  "assets/sprites/Noob_Clean_Avatar.png",
+const EXPRESSIONS = [
   "assets/expressions/noob_default.png",
   "assets/expressions/noob_happy.png",
   "assets/expressions/noob_shades.png",
   "assets/expressions/noob_yay1.png",
+  "assets/expressions/noob_anger.png",
+  "assets/expressions/noob_bigeyes.png",
+  "assets/expressions/noob_cry.png",
+  "assets/expressions/noob_ded.png",
+  "assets/expressions/noob_orly.png",
+  "assets/expressions/noob_uwu1.png",
 ];
+
+const EMBLEM_ART = [...HEADS, ...EXPRESSIONS.slice(0, 5)];
+
+const MEDALS = {
+  Wood: "assets/medals/Icon_Wood-Medal.png",
+  Stone: "assets/medals/Icon_Stone-Medal.png",
+  Copper: "assets/medals/Icon_Copper-Medal.png",
+  Iron: "assets/medals/Icon_Iron-Medal.png",
+  Gold: "assets/medals/Icon_Gold-Medal.png",
+  Giga: "assets/medals/Icon_Giga-Medal.png",
+};
+
+export const BRAND = {
+  glhf: "assets/logo/GLHF_Logo_Deep.png",
+  gigaverse: "assets/logo/Gigaverse_Logo.png",
+  banner: "assets/gifs/Gigaverse_Banner.gif",
+  click: "assets/sounds/Click.mp3",
+};
 
 const BASE_VALUES = [
   ["Default", 70],
@@ -385,8 +407,44 @@ export function romTraitOptions() {
 
 export function spriteFor(token) {
   if (token.collection === "roms") return FACTION_ART[traitValue(token, "Faction")];
-  if (token.collection === "glhfers") return HEADS[(token.id - 1) % HEADS.length];
-  return GIG_ART[(token.id - 1) % GIG_ART.length];
+  if (token.collection === "glhfers") {
+    if (token.id % 3 === 0) return EXPRESSIONS[(token.id - 1) % EXPRESSIONS.length];
+    return HEADS[(token.id - 1) % HEADS.length];
+  }
+  return EXPRESSIONS[(token.id - 1) % EXPRESSIONS.length];
+}
+
+export function factionIcon(name) {
+  return FACTION_ART[name] || "";
+}
+
+export function emblemIconFor(name) {
+  const index = BASE_VALUES.findIndex((row) => row[0] === name);
+  return EMBLEM_ART[index >= 0 ? index : 0];
+}
+
+export function medalPath(name) {
+  return MEDALS[name] || MEDALS.Wood;
+}
+
+export function medalForTier(tier) {
+  const names = { Holder: "Wood", Keeper: "Stone", Stack: "Copper", Vault: "Iron", Archive: "Gold" };
+  return medalPath(names[tier] || "Wood");
+}
+
+export function medalForRank(rank) {
+  if (rank <= 1) return MEDALS.Giga;
+  if (rank <= 3) return MEDALS.Gold;
+  if (rank <= 10) return MEDALS.Iron;
+  if (rank <= 25) return MEDALS.Copper;
+  return MEDALS.Stone;
+}
+
+export function medalForScore(score) {
+  if (score >= 80) return MEDALS.Giga;
+  if (score >= 60) return MEDALS.Iron;
+  if (score >= 40) return MEDALS.Copper;
+  return MEDALS.Wood;
 }
 
 export function placeholderSvg(token) {
