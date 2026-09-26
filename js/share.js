@@ -44,11 +44,11 @@ export async function renderShareCard(view) {
   canvas.width = 1200;
   canvas.height = 630;
   const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "#fafaf8";
+  ctx.fillStyle = "#161614";
   ctx.fillRect(0, 0, 1200, 630);
-  ctx.fillStyle = "#ffffff";
+  ctx.fillStyle = "#22211e";
   ctx.fillRect(28, 28, 1144, 574);
-  ctx.strokeStyle = "#e7e4de";
+  ctx.strokeStyle = "#3c3b37";
   ctx.lineWidth = 2;
   ctx.strokeRect(28, 28, 1144, 574);
 
@@ -59,7 +59,7 @@ export async function renderShareCard(view) {
     drawPixel(ctx, glhf, cursor, 48, w, h);
     cursor += w + 14;
   }
-  ctx.fillStyle = "#1c1c1c";
+  ctx.fillStyle = "#f3f1eb";
   ctx.font = "32px Gigaverse, Inter, sans-serif";
   ctx.fillText("CLUB", cursor, 82);
   cursor += ctx.measureText("CLUB").width + 22;
@@ -68,26 +68,27 @@ export async function renderShareCard(view) {
     const w = Math.round(gigaverse.width * (h / gigaverse.height));
     drawPixel(ctx, gigaverse, cursor, 58, w, h);
   }
-  ctx.fillStyle = "#5f5f5f";
+  ctx.fillStyle = "#c2bdb3";
   ctx.font = "400 16px Inter, sans-serif";
   ctx.textAlign = "right";
   ctx.fillText("Snapshot 17 Jul 2026", 1144, 78);
   ctx.textAlign = "left";
 
-  ctx.fillStyle = "#1c1c1c";
+  ctx.fillStyle = "#f3f1eb";
   ctx.font = "500 24px Inter, sans-serif";
   ctx.fillText(fitText(ctx, view.address, 1080), 56, 148);
+  ctx.fillStyle = "#c2bdb3";
   ctx.font = "400 20px Inter, sans-serif";
   ctx.fillText(`Rank #${view.rank}   ·   Full-stack   ·   ${view.tier}`, 56, 184);
 
   const rare = rarityMeta(view.rarest.rarity);
-  ctx.fillStyle = "#5f5f5f";
+  ctx.fillStyle = "#c2bdb3";
   ctx.font = "400 15px Inter, sans-serif";
   ctx.fillText("Rarest piece", 56, 230);
   ctx.strokeStyle = rare.color;
   ctx.lineWidth = 4;
   ctx.strokeRect(56, 244, 16, 16);
-  ctx.fillStyle = "#1c1c1c";
+  ctx.fillStyle = "#f3f1eb";
   ctx.font = "500 22px Inter, sans-serif";
   ctx.fillText(fitText(ctx, `${view.rarest.name}   ·   ${rare.label}`, 1000), 84, 258);
 
@@ -98,20 +99,20 @@ export async function renderShareCard(view) {
   ];
   stats.forEach((row, index) => {
     const x = 56 + index * 240;
-    ctx.fillStyle = "#fafaf8";
+    ctx.fillStyle = "#2c2b28";
     ctx.fillRect(x, 292, 220, 78);
-    ctx.strokeStyle = "#e7e4de";
+    ctx.strokeStyle = "#3c3b37";
     ctx.lineWidth = 1;
     ctx.strokeRect(x, 292, 220, 78);
-    ctx.fillStyle = "#5f5f5f";
+    ctx.fillStyle = "#c2bdb3";
     ctx.font = "400 14px Inter, sans-serif";
     ctx.fillText(row[0], x + 16, 320);
-    ctx.fillStyle = "#1c1c1c";
+    ctx.fillStyle = "#f3f1eb";
     ctx.font = "28px Gigaverse, Inter, sans-serif";
     ctx.fillText(row[1], x + 16, 354);
   });
 
-  ctx.fillStyle = "#5f5f5f";
+  ctx.fillStyle = "#c2bdb3";
   ctx.font = "400 15px Inter, sans-serif";
   ctx.fillText("Top three", 56, 412);
 
@@ -119,13 +120,13 @@ export async function renderShareCard(view) {
     const token = view.top[index];
     const x = 56 + index * 360;
     const color = rarityMeta(token.rarity).color;
-    ctx.fillStyle = "#f4f2ee";
+    ctx.fillStyle = "#2c2b28";
     ctx.fillRect(x, 428, 112, 112);
     ctx.strokeStyle = color;
     ctx.lineWidth = 3;
     ctx.strokeRect(x, 428, 112, 112);
     drawPixel(ctx, sprites[index], x + 10, 438, 92, 92);
-    ctx.fillStyle = "#1c1c1c";
+    ctx.fillStyle = "#f3f1eb";
     ctx.font = "500 16px Inter, sans-serif";
     ctx.fillText(fitText(ctx, token.name, 220), x + 128, 470);
     ctx.fillStyle = color;

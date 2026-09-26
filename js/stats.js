@@ -13,7 +13,7 @@ function bars(rows, colorFor) {
   const marks = rows.map((row, index) => {
     const y = 8 + index * rowH;
     const barW = row.value === 0 ? 0 : Math.max(2, (track * row.value) / max);
-    const fill = colorFor ? colorFor(row) : "#1c1c1c";
+    const fill = colorFor ? colorFor(row) : "#d4d0c8";
     return `<text x="0" y="${y + 16}">${esc(row.label)}</text>
       <rect x="${labelW}" y="${y + 6}" width="${barW}" height="12" fill="${fill}"></rect>
       <text x="${labelW + barW + 8}" y="${y + 16}">${esc(row.valueLabel)}</text>`;
